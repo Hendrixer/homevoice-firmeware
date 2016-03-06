@@ -4,7 +4,12 @@ var constants = require('./utils/constants');
 var Firebase = require('firebase');
 var express = require('express');
 var run = require('child_process').spawn;
+var _ = require('lodash');
 var app = express();
+
+var speak = _.throttle(function(message) {
+  spawn('espeak', ['-v', 'en', message]);
+}, 1000);
 
 app.listen(3500);
 var deviceEventsStream = new Firebase(constants.eventsUrl);
