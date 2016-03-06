@@ -3,8 +3,8 @@
 var constants = require('./utils/constants');
 var Firebase = require('firebase');
 var express = require('express');
-
-var app = require('express');
+var run = require('child_process').spawn;
+var app = express();
 
 app.listen(3500);
 var deviceEventsStream = new Firebase(constants.eventsUrl);
