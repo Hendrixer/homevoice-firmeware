@@ -16,12 +16,12 @@ var deviceEventsStream = new Firebase(constants.eventsUrl);
 var initialEventsLoad = false;
 deviceEventsStream.on('child_added', function(snapshot) {
 
-  if (!initialEventsLoad) {
-    setTimeout(function(){
-      initialEventsLoad = true;
-    });
-    return;
-  }
+  // if (!initialEventsLoad) {
+  //   setTimeout(function(){
+  //     initialEventsLoad = true;
+  //   });
+  //   return;
+  // }
   console.log(snapshot.val());
 });
 // var board = new five.Board({
