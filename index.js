@@ -8,7 +8,7 @@ var _ = require('lodash');
 var app = express();
 
 var speak = _.throttle(function(message) {
-  spawn('espeak', ['-v', 'en', message]);
+  run('espeak', ['-v', 'en', message]);
 }, 1000);
 
 app.listen(3500);
