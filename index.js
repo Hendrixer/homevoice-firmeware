@@ -1,10 +1,10 @@
-// var raspi = require('raspi-io');
-// var five = require('johnny-five');
+
 var constants = require('./utils/constants');
 var Firebase = require('firebase');
 var express = require('express');
 var run = require('child_process').spawn;
 var _ = require('lodash');
+require('./board');
 var app = express();
 
 var speak = _.throttle(function(message) {
@@ -25,8 +25,6 @@ deviceEventsStream.on('child_added', function(snapshot) {
   var message = 'Listen up! ' + event.name + ' ' + event.value;
   speak(message);
 });
-// var board = new five.Board({
-//   io: new raspi()
-// });
+
 
 
