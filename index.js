@@ -4,7 +4,7 @@ var Firebase = require('firebase');
 var express = require('express');
 var run = require('child_process').spawn;
 var _ = require('lodash');
-require('./board');
+// require('./board');
 var app = express();
 
 var speak = _.throttle(function(message) {
