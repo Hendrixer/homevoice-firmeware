@@ -7,4 +7,18 @@ var board = new five.Board({
 
 board.on('ready', function() {
   console.log('board ready');
-})
+  var button = new five.Button({
+    pin: 'GPIO18',
+    holdtime: 1500
+  });
+
+  button.on('hold', function() {
+    console.log('held');
+  });
+  button.on('press', function() {
+    console.log('pressed');
+  });
+  button.on('release', function() {
+    console.log('release');
+  });
+});
