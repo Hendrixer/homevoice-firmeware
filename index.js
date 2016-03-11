@@ -4,10 +4,11 @@ var Firebase = require('firebase');
 var express = require('express');
 var run = require('child_process').spawn;
 var _ = require('lodash');
-// require('./board');
+require('./board');
 var app = express();
 
 var speak = _.throttle(function(message) {
+  console.log(message);
   run('espeak', ['-v', 'en', message]);
 }, 1000);
 
@@ -22,7 +23,7 @@ deviceEventsStream.on('child_added', function(snapshot) {
     return;
   }
   var event = snapshot.val();
-  var message = 'Listen up! ' + event.name + ' ' + event.value;
+  var message = event.name + ' ' + event.value;
   speak(message);
 });
 
