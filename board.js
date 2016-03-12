@@ -9,16 +9,13 @@ board.on('ready', function() {
   console.log('board ready');
   var button = new five.Button({
     pin: 'GPIO24',
-    holdtime: 1500
+    isPullup: true
   });
 
-  button.on('hold', function() {
-    console.log('held');
+  button.on('down', function() {
+    console.log('down');
   });
-  button.on('press', function() {
-    console.log('pressed');
-  });
-  button.on('release', function() {
-    console.log('release');
+  button.on('up', function() {
+    console.log('up');
   });
 });
