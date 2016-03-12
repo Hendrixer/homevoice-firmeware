@@ -8,7 +8,7 @@ var board = new five.Board({
 board.on('ready', function() {
   console.log('board ready');
   var button = new five.Button({
-    pin: 'GPIO22',
+    pin: 'GPIO27',
     isPullup: true
   });
 
