@@ -7,15 +7,17 @@ var board = new five.Board({
 
 board.on('ready', function() {
   console.log('board ready');
-  var button = new five.Button({
-    pin: 'GPIO27',
-    isPullup: true
-  });
+  var button = new five.Button(18);
 
   button.on('down', function() {
     console.log('down');
   });
+
   button.on('up', function() {
     console.log('up');
+  });
+
+  button.on('hold', function() {
+    console.log('hold');
   });
 });
